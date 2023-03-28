@@ -1,3 +1,9 @@
+body{
+    background-image: url(../imagens/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
 .mosquito1{
     width: 50px;
     height: 50px;
@@ -20,3 +26,25 @@
 .ladoB {
     transform: scaleX(-1);
 }/*Inverte o elemento horizontalmente*/
+
+.painel{
+    position: absolute;
+    width: 190px;
+    padding: 10px;
+    bottom: 0px;
+    border-top: 1px solid #ffff;
+    background-color: #ffff;
+    opacity: 0.7;
+    margin-bottom: 10px;
+
+}
+
+.vidas{
+    float: right;
+}
+
+.cronometro{
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+}
