@@ -11,7 +11,12 @@
 <body onresize="ajustaTamanhoPalcoJogo()">
 
 
-    <script>posicaoRandomica()</script>
+    <script>
+        setInterval(function(){
+            posicaoRandomica()
+        }, 1000) // Em cada intervalo de 1000 milissegundos vai chamar a funcão posicaoR, e cria um novo mosquito
+
+    </script>
 </body>
 
 </html>

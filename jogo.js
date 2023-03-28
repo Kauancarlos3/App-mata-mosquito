@@ -14,6 +14,11 @@ ajustaTamanhoPalcoJogo();
 
 function posicaoRandomica() {
 
+    
+    if(document.getElementById('mosquito')){
+        document.getElementById('mosquito').remove();
+    };// condição que irá pegar o id e remover o ultimo elemento criado do mosquito. Foi usado o obejeto DOM dentro do if, porque ele irá ler como true e se caso foi true mesmo ele entra no bloco de códigos, caso não for seria null e não leria.
+
     let posicaoX = Math.floor(Math.random() * largura) - 90;
     let posicaoY = Math.floor(Math.random() * altura) - 90;
 
@@ -29,6 +34,7 @@ function posicaoRandomica() {
     imagem.style.left = posicaoX + 'px';
     imagem.style.top = posicaoY + 'px';
     imagem.style.position = 'absolute';
+    imagem.id = 'mosquito'; //Foi criado um id para poder manipular e remover o mosquito criador anteriormente 
 
     document.body.appendChild(imagem); //incluir no body
 
