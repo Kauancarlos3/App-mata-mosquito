@@ -1,6 +1,7 @@
 let altura = 0;
 let largura = 0;
 let vidas = 1;
+let tempo = 50;
 
 
 function ajustaTamanhoPalcoJogo() {
@@ -13,6 +14,12 @@ function ajustaTamanhoPalcoJogo() {
 
 ajustaTamanhoPalcoJogo();
 
+let cronometro = setInterval(function(){
+
+    tempo -= 1;  
+    document.getElementById('cronometro').innerHTML = tempo;
+}, 1000);
+
 function posicaoRandomica() {
 
     
@@ -20,8 +27,7 @@ function posicaoRandomica() {
         document.getElementById('mosquito').remove();
 
         if(vidas > 3){
-            alert(' Game over');
-        
+           window.location.href = 'fim_de_jogo.html';
         } else{
             document.getElementById('v' + vidas).src= "imagens/coracao_vazio.png";//concatenação do id da imagem com a variavel vida, assim acrescentando programaticamente +1
 
