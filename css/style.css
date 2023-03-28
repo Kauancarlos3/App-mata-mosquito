@@ -39,10 +39,6 @@ body{
 
 }
 
-.vidas{
-    float: right;
-}
-
 .cronometro{
     float: left;
     font-size: 20px;

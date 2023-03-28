@@ -1,5 +1,6 @@
 let altura = 0;
 let largura = 0;
+let vidas = 1;
 
 
 function ajustaTamanhoPalcoJogo() {
@@ -17,6 +18,15 @@ function posicaoRandomica() {
     
     if(document.getElementById('mosquito')){
         document.getElementById('mosquito').remove();
+
+        if(vidas > 3){
+            alert(' Game over');
+        
+        } else{
+            document.getElementById('v' + vidas).src= "imagens/coracao_vazio.png";//concatenação do id da imagem com a variavel vida, assim acrescentando programaticamente +1
+
+           vidas++
+        }
     };// condição que irá pegar o id e remover o ultimo elemento criado do mosquito. Foi usado o obejeto DOM dentro do if, porque ele irá ler como true e se caso foi true mesmo ele entra no bloco de códigos, caso não for seria null e não leria.
 
     let posicaoX = Math.floor(Math.random() * largura) - 90;
@@ -35,6 +45,9 @@ function posicaoRandomica() {
     imagem.style.top = posicaoY + 'px';
     imagem.style.position = 'absolute';
     imagem.id = 'mosquito'; //Foi criado um id para poder manipular e remover o mosquito criador anteriormente 
+    imagem.onclick = function(){
+        this.remove()
+    }// Essa função vai remover a imagem quando clicada // esse this. é usado na orientação a objetos
 
     document.body.appendChild(imagem); //incluir no body
 
