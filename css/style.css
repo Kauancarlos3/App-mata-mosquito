@@ -12,3 +12,11 @@
     width: 90px;
     height: 90px;
 }
+
+.ladoA{
+    transform:  scaleX(1);
+}/*Não inverte um elemento horizontalmente porque o 1 mantém a mesma escala*/
+
+.ladoB {
+    transform: scaleX(-1);
+}/*Inverte o elemento horizontalmente*/

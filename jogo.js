@@ -25,15 +25,13 @@ function posicaoRandomica() {
     //Adicionar uma imagem de forma programatica
     let imagem = document.createElement('img'); // criar um elemento html
     imagem.src = 'imagens/mosca.png'; // acessar o src
-    imagem.className = tamanhoAleatorio();// acessar o css //chamou a função aqui pra acessar as 3 imagens
-
+    imagem.className = tamanhoAleatorio() + ' ' + ladoAleatorio();//acessar o css //chamou a função aqui pra acessar as 3 imagens //Foi precisso concatenar um espaço entre as funções por que são duas strings que a função chama, ou seja: mosquito1 e ladoA. As duas juntas ficariam uma string e o broese não iria interpretar.
     imagem.style.left = posicaoX + 'px';
     imagem.style.top = posicaoY + 'px';
     imagem.style.position = 'absolute';
 
     document.body.appendChild(imagem); //incluir no body
 
-    console.log(tamanhoAleatorio());
 
 }
 
@@ -41,7 +39,6 @@ function tamanhoAleatorio(){
 
     let classe = Math.floor(Math.random() * 3);
     
-
     switch(classe){
         case 0:
             return 'mosquito1';//Nesse caso não precisa do break, porque o return ja para tudo, retornando o dado.
@@ -52,4 +49,17 @@ function tamanhoAleatorio(){
     }
 }
 
+function ladoAleatorio(){
+
+    let classe = Math.floor(Math.random() * 2);
+    
+
+    switch(classe){
+        case 0:
+            return 'ladoA';//Nesse caso não precisa do break, porque o return ja para tudo, retornando o dado.
+        case 1:
+            return 'ladoB';
+
+    }
+}
 
