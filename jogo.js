@@ -1,7 +1,7 @@
 let altura = 0;
 let largura = 0;
 let vidas = 1;
-let tempo = 50;
+let tempo = 10;
 
 
 function ajustaTamanhoPalcoJogo() {
@@ -16,8 +16,16 @@ ajustaTamanhoPalcoJogo();
 
 let cronometro = setInterval(function(){
 
-    tempo -= 1;  
-    document.getElementById('cronometro').innerHTML = tempo;
+    tempo -= 1; 
+
+    if(tempo < 0){
+        clearInterval(cronometro);
+        clearInterval(criamosca);
+        window.location.href = 'vitoria_jogo.html';
+    }else{
+        document.getElementById('cronometro').innerHTML = tempo;
+    }
+    
 }, 1000);
 
 function posicaoRandomica() {
